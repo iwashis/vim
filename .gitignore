@@ -1,0 +1,5 @@
+bundle/
+init.vim.old
+node_modules/
+plugin/
+
