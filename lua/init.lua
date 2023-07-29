@@ -155,7 +155,6 @@ require('nvim-treesitter.configs').setup {
   auto_install = true,
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting=false,
   },
   ident = { enable = true }, 
   rainbow = {
@@ -165,3 +164,17 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {},
+        ["core.dirman"] = {
+            config = {
+                workspaces = {
+                    work = "~/Documents/org/work",
+                    home = "~/Documents/org/home",
+                    journal = "~/Documents/org/journal",
+                }
+            }
+        }
+    }
+}

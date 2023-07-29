@@ -84,6 +84,27 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'                              
   use 'hrsh7th/cmp-buffer'                            
   use 'hrsh7th/vim-vsnip' 
+  use {
+      "nvim-neorg/neorg",
+      config = function()
+          require('neorg').setup {
+              load = {
+                  ["core.defaults"] = {}, -- Loads default behaviour
+                  ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                  ["core.dirman"] = { -- Manages Neorg workspaces
+                      config = {
+                          workspaces = {
+                              notes = "~/Documents/org/notes",
+                          },
+                      },
+                  },
+              },
+          }
+      end,
+      run = ":Neorg sync-parsers",
+      requires = "nvim-lua/plenary.nvim",
+  }
+
 end)
 
 
